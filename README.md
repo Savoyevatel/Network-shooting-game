@@ -1,2 +1,2 @@
 # Network-shooting-game
-Network shooting ggameadslkfjjfadsf
+Network shooting using socket and pygame
