@@ -14,7 +14,7 @@ class Bullet:
         self.y = starty
         self.velocity = 5
         self.damage = 1
-        self.image = pygame.image.load(spaceship/bullet.png")
+        self.image = pygame.image.load("spaceship/bullet.png")
         self.image = pygame.transform.scale(self.image, (10, 10))  # Adjust size as needed
 
     def move(self):
