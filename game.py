@@ -2,7 +2,7 @@ import pygame
 import sys
 from network import Network
 
-filename = "C:/Users/manue/OneDrive/Desktop/projects/tile_game/spaceship/R.png"
+filename = "spaceship/R.png"
 white = (255, 255, 255)
 green = (0, 255, 0)
 red = (255, 0, 0)
@@ -14,7 +14,7 @@ class Bullet:
         self.y = starty
         self.velocity = 5
         self.damage = 1
-        self.image = pygame.image.load("C:/Users/manue/OneDrive/Desktop/projects/tile_game/spaceship/bullet.png")
+        self.image = pygame.image.load("spaceship/bullet.png")
         self.image = pygame.transform.scale(self.image, (10, 10))  # Adjust size as needed
 
     def move(self):
