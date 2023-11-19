@@ -14,7 +14,7 @@ class Bullet:
         self.y = starty
         self.velocity = 5
         self.damage = 1
-        self.image = pygame.image.load("spaceship/bullet.png")
+        self.image = pygame.image.load(spaceship/bullet.png")
         self.image = pygame.transform.scale(self.image, (10, 10))  # Adjust size as needed
 
     def move(self):
@@ -27,15 +27,18 @@ class Bullet:
 class Player:
     width = height = 50
 
-    def __init__(self, startx, starty, canvas):
+    def __init__(self, startx, starty, canvas, multi):
         self.x = startx
         self.y = starty
+        self.multi = multi
         self.max_health = 100
         self.health = self.max_health
         self.health_percentage = 1.0
         self.velocity = 2
         self.image = pygame.image.load(filename)
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
+        if multi == 2:
+            self.image = pygame.transform.rotate(self.image, 180)
         self.bullets = []
         self.canvas = canvas
 
@@ -90,8 +93,8 @@ class Game:
         self.width = w
         self.height = h
         self.canvas = Canvas(self.width, self.height, "Testing...")
-        self.player = Player(50, 50, self.canvas)
-        self.player2 = Player(100, 100, self.canvas)
+        self.player = Player(50, 50, self.canvas,1)
+        self.player2 = Player(100, 100, self.canvas,2)
 
 
     def run(self):
@@ -210,11 +213,11 @@ class Canvas:
         return self.screen
 
     def draw_background(self):
-        self.screen.fill((255, 255, 255))
+        self.screen.fill((0, 0, 0))
 
 
 if __name__ == "__main__":
     pygame.init()
-    game = Game(800, 600)
+    game = Game(1800, 1600)
     game.run()
     sys.exit()
